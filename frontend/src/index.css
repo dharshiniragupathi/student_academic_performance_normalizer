@@ -1,0 +1,17 @@
+:root {
+  --primary: #1E3A8A;
+  --secondary: #3B82F6;
+  --accent: #06B6D4;
+  --bg: #F3F4F6;
+  --card-bg: #FFFFFF;
+  --success: #16A34A;
+  --warning: #F59E0B;
+  --danger: #DC2626;
+  --radius: 14px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+}
