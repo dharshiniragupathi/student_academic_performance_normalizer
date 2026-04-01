@@ -13,8 +13,12 @@ const staffRoutes = require('./routes/staffRoutes');
 const reportRoutes = require('./routes/reportRoutes');
 
 const app = express();
+const allowedOrigin = process.env.FRONTEND_URL;
 
-app.use(cors());
+app.use(cors({
+  origin: allowedOrigin || true,
+  credentials: true,
+}));
 app.use(express.json());
 app.use((req, res, next) => {
   if (req.path.startsWith('/api/')) {
@@ -24,6 +28,10 @@ app.use((req, res, next) => {
     res.setHeader('Surrogate-Control', 'no-store');
   }
   next();
+});
+
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ ok: true });
 });
 
 // Routes
