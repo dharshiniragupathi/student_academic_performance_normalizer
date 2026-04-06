@@ -31,11 +31,11 @@ import {
   MBBS_SUBJECT_TOTALS,
   buildMbbsDemoExamRows,
 } from "../../data/mbbsDemoMarksSeed";
+import { API_BASE_URL } from "../../config/api";
 import "./AdminDashboard.css";
 
 const TABS = ["overview", "students", "staff", "subjects", "marks", "settings", "reports"];
 const MARKS_TABS = ["add", "view", "upload"];
-const API_BASE_URL = "http://localhost:5000";
 
 const mbbsSubjects = [
   { code: "MBBS101", name: "Anatomy", department: "MBBS", year: "1st", maxMarks: MBBS_SUBJECT_TOTALS.MBBS101.maxMarks, passMarks: MBBS_SUBJECT_TOTALS.MBBS101.passMarks, credits: 4 },

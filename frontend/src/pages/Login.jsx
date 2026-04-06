@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import loginImage from "../assets/login-illustration.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { buildApiUrl } from "../config/api";
 import { clearAuthSession, setAuthSession } from "../utils/authStorage";
 import "./Login.css";
 function Login() {
@@ -15,7 +16,7 @@ function Login() {
     const normalizedEmail = String(email || "").trim().toLowerCase();
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      const res = await axios.post(buildApiUrl("/api/auth/login"), {
         email: normalizedEmail,
         password,
       });
